@@ -1,0 +1,38 @@
+body{
+    background-image: url("../images/back2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#olx{
+    border-radius: 50%;
+}
+#bar{
+    margin-left: 70%;
+}
+ul{
+    color: lightgray;
+}
+#login{
+    background-color: transparent;
+    transform: translate(-50 , -50);
+    color: rgb(240, 10, 10);
+}
+#login input{
+    background-color: transparent;
+    transform: translate(-50 , -50);
+    color: black;
+    border: none;
+    border-bottom: 5px solid gray;
+    color: red;
+}
+#login button{
+    width: 50%;
+    margin-left: 27%;
+}
+
+@media(max-width: 526px){
+    #bar{
+        display :none !important;
+           
+}     
+}

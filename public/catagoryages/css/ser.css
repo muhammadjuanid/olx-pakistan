@@ -1,0 +1,27 @@
+body{
+    background-image: url("../images/ser.png");
+    background-repeat: no-repeat;
+    background-position: right;
+}
+#olx{
+    border-radius: 50%;
+}
+#bar{
+    margin-left: 60%;
+}
+.imagesAdds{
+    border-radius: 10%; 
+}
+.container .addsDiv{
+    box-sizing: content-box;
+    text-align: center;
+}
+.addsDiv{
+    background-color: transparent;
+    text-align: center;
+    border: 1px solid lightgray;
+    width: 40%;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    box-shadow: 3px 3px 2px 2px lightgray; 
+}

@@ -1,0 +1,52 @@
+body{
+    background-image: url("../images/back2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#olx{
+    border-radius: 50%;
+}
+#bar{
+    margin-left: 60%;
+}
+#btn-let{
+    width: 50%;
+    margin-left: 26%;
+}
+#searchbyname{
+    width: 50%;
+    margin-left: 25%;
+}
+#catagoryForSearch{
+    width: 50%;
+    margin-left: 25%;
+}
+#logout{
+    width: 10%;
+    height: 38px;
+    border: none;
+    border-radius: 10%;
+    color: white;
+}
+.imagesAdds{
+    border-radius: 50%;
+    box-shadow: inset 3px 3px 15px 15px;
+    width: 25%;
+    background-color: beige;
+    border: none;
+    flex: 2;
+    margin-top: 5%;
+}
+#divAdds{
+    color: lightcoral;
+    width: 50%;
+    margin-left: 5%;
+    border-radius: 5%;
+    display: flex;
+    font-weight: bolder;
+    box-sizing: border-box; 
+}
+#divAdds .details{
+    text-align: right;
+    flex: 1;
+}

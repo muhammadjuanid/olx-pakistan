@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Dashbord</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="dashbord.css" type="text/css">
+</head>
+
+<body>
+    <div id="main_div">
+        <div class="header container center py-3">
+            <img src="../images/olx.png" width="80" height="80" id="olx">
+            <img src="../images/bar.png" width="40" height="40" id="bar" class="mb-5" />
+            <button class="float-right btn bg-danger" id="logout">Logout</button>
+                <button class="btn bg-success btn-success float-right mr-4 pt-1" id="btn">My Account</button>
+            
+        </div>
+        <div class="container">
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="text-center"> Add Product</h4>
+                        </div>
+                        <div class="card-footer">
+                            <button data-toggle="modal" data-target="#addProduct" id="btn-let" class="btn btn-outline-success">Lets Start</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container my-3">
+            <input type="text" class="form-control" id="searchbyname" placeholder="Search by Product Name" />
+            <br/>
+            <center>
+                <button onclick="searchName()" type="submit" class="btn btn-outline-success" id="ser_Btn">Search</button>
+            </center>
+            <br/>
+            <br/>
+            <select class="form-control" oninput="catagorySearch()" id="catagoryForSearch">
+                <option value="selected">Select Catagory</option>
+                <option value="propertyForBuy">Property For Buy</option>
+                <option value="propertyForRent">Property For Rent</option>
+                <option value="cars">Cars</option>
+                <option value="bikes">Bikes</option>
+                <option value="Home Applinces">Home Applinces</option>
+                <option value="Jobs">Jobs</option>
+                <option value="Services">Services</option>
+                <option value="Mobile Phone">Mobile Phone</option>
+            </select>
+        </div>
+
+        <div id="divAdds"  class="card"></div>
+
+        <div class="modal fade" id="addProduct">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="modal-title">
+                            <h5 class="bg-success">Add Product</h5>
+                        </div>
+                    </div>
+
+                    <form onsubmit="addProductForm(event)" >
+                        <div class="modal-body">
+                            <input type="text" required="required" id="name" class="form-control" placeholder="name">
+                            <br>
+                            <select class="form-control" id="catagory">
+                                <option value="selected">Select Catagory</option>
+                                <option value="propertyForBuy">Property For Buy</option>
+                                <option value="propertyForRent">Property For Rent</option>
+                                <option value="cars">Cars</option>
+                                <option value="bikes">Bikes</option>
+                                <option value="Home Applinces">Home Applinces</option>
+                                <option value="Jobs">Jobs</option>
+                                <option value="Services">Services</option>
+                                <option value="Mobile Phone">Mobile Phone</option>
+                            </select>
+
+                            <br>
+
+                            <input type="text" required="required" id="title" class="form-control" placeholder="title">
+                            <br>
+                            <input type="text" required="required" id="phone_number" class="form-control" placeholder="phone number +92: ....">
+                            <br>
+                            <input type="text" required="required" id="address" class="form-control" placeholder="Address">
+                            <br>
+                            <input type="number" id="price" placeholder="Price" class="form-control">
+                            <br/>
+
+                            <div>
+                                <input type="file" multiple="multiple" id="file" class="card btn-outline-primary">
+                                <button type="button" id="button">Send</button>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" value="submit" class="btn btn-outline-success">Add</button>
+                            <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="card_ads"></div>
+        <table id="tableForMess"></table>
+        <hr/>
+        <section id="footer" class="footer">
+            <div class="container">
+                <div class="row text-center text-xs-center text-sm-left text-md-left">
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <ul class="list-unstyled quick-links">
+                            <li>
+                                <a href="javascript:void();">
+                                    <i class="fa fa-angle-double-right"></i>Location Map</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void();">
+                                    <i class="fa fa-angle-double-right"></i>Popular Search</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void();">
+                                    <i class="fa fa-angle-double-right"></i>SiteMap</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <ul class="list-unstyled quick-links">
+                            <li>
+                                <a href="javascript:void();">
+                                    <i class="fa fa-angle-double-right"></i>Terms of Use</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void();">
+                                    <i class="fa fa-angle-double-right"></i>Help & Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <ul class="list-unstyled quick-links">
+                            <li>
+                                <a href="javascript:void();">
+                                    <i class="fa fa-angle-double-right"></i>Who We Are</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void();">
+                                    <i class="fa fa-angle-double-right"></i>Join OLX Pakistan</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void();">
+                                    <i class="fa fa-angle-double-right"></i>Happy OLXers Pakistan</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                        </hr>
+                    </div>
+                </div>
+        </section>
+
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../bootstrap/bootstrap.bundle.js"></script>
+    <script src="../bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../bootstrap/bootstrap.min.js"></script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+        
+        <script>
+                // Initialize Firebase
+                var config = {
+                  apiKey: "AIzaSyC6tw_nRT7KV1Hk1iMY4nHrExbTVq1HS90",
+                  authDomain: "myolx-36e96.firebaseapp.com",
+                  databaseURL: "https://myolx-36e96.firebaseio.com",
+                  projectId: "myolx-36e96",
+                  storageBucket: "myolx-36e96.appspot.com",
+                  messagingSenderId: "220677066754"
+                };
+                firebase.initializeApp(config);
+              </script>
+              <script>
+    
+                document.getElementById('logout').addEventListener('click', () => {
+                       firebase.auth()  .signOut().then(() => {
+                            localStorage.removeItem('user');
+                            window.location.href = "../index.html";
+                        });
+                    });
+                </script>
+                <script src="dashbord.js"></script>
+                
+
+</body>
+
+</html>
