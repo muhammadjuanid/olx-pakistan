@@ -45,6 +45,17 @@ firestore.collection("messages").where("recID", "==", currentUserId)
         })
     })
 
+    var name;
+    var to;
+    firebase.firestore().collection("users").doc(currentUserId).get()
+        .then((querySnapshot) => {
+            console.log(querySnapshot.data().token);
+            to = querySnapshot.data().token;
+           name = querySnapshot.data().name;
+           // querySnapshot.forEach((elem) => {
+            // console.info(elem.data());
+   //  });
+        });
 
 
 
@@ -185,59 +196,55 @@ function send_msgs(event) {
 
 
 
-            })
-        firebase.firestore().collection("users").where("currentUserId", "==", true).get()
-            .then((res) => {
-                res.forEach((elem) => {
-                    console.info("res.data()", elem.data());
-                })
+          })
+        // firebase.firestore().collection("users").where("currentUserId", "==", true).get()
+        //     .then((res) => {
+        //         res.forEach((elem) => {
+        //             console.info("res.data()", elem.data());
+        //         })
 
-            })
+        //     })
 
-            firebase.firestore().collection("users").where("")
+            // firebase.firestore().collection("users").where("")
 
-        var name;
-        var to;
-        firebase.firestore().collection("users").doc(currentUserId).get()
-            .then((querySnapshot) => {
-                console.log(querySnapshot.data().token);
-                to = querySnapshot.data().token;
-                name = querySnapshot.data().name;
-                // querySnapshot.forEach((elem) => {
-                // console.info(elem.data());
-                // });
-            });
+        // var name;
+        // var to;
+        // firebase.firestore().collection("users").doc(currentUserId).get()
+        //     .then((querySnapshot) => {
+        //         console.log(querySnapshot.data().token);
+        //         to = querySnapshot.data().token;
+        //         name = querySnapshot.data().name;
+        //         // querySnapshot.forEach((elem) => {
+        //         // console.info(elem.data());
+        //         // });
+        //     });
 
-        var key = 'AIzaSyAor9xjGx6Lf29F8fo9Lg-CMg9sncNtf64';
-        // var to = "fpHvA_Ouzqc:APA91bFyDMc9CcIvohBoafrTwnJGRKa_cFl0Of8mkReuO5-P0HfV4WTLtvxtp2wMf13px58h7vAwgwhd6OAmHs-N_vX03zxbDKfx8Aq7vAvK0QszmiXjlOekk_Zq5B88lovvfeevArYK";
-        var notification = {
-            'title': "Message From: " + name,
-            'message': "message"
-        };
+        // var key = 'AIzaSyAor9xjGx6Lf29F8fo9Lg-CMg9sncNtf64';
+        // // var to = "fpHvA_Ouzqc:APA91bFyDMc9CcIvohBoafrTwnJGRKa_cFl0Of8mkReuO5-P0HfV4WTLtvxtp2wMf13px58h7vAwgwhd6OAmHs-N_vX03zxbDKfx8Aq7vAvK0QszmiXjlOekk_Zq5B88lovvfeevArYK";
+        // var notification = {
+        //     'title': "Message From: " + name,
+        //     'message': "message"
+        // };
 
-        fetch("https://fcm.googleapis.com/fcm/send", {
-            'method': 'POST',
-            'headers': {
-                'Authorization': 'key=' + key,
-                'Content-Type': 'application/json'
-            },
-            'body': JSON.stringify({
-                'notification': notification,
-                'to': to
-            })
-        }).then(function (response) {
-            console.log(response);
-        }).catch(function (error) {
-            console.error(error);
-        });
+        // fetch("https://fcm.googleapis.com/fcm/send", {
+        //     'method': 'POST',
+        //     'headers': {
+        //         'Authorization': 'key=' + key,
+        //         'Content-Type': 'application/json'
+        //     },
+        //     'body': JSON.stringify({
+        //         'notification': notification,
+        //         'to': to
+        //     })
+        // }).then(function (response) {
+        //     console.log(response);
+        // }).catch(function (error) {
+        //     console.error(error);
+        // });
 
-        messaging.onMessage(function (payload) {
-            console.log('onMessage', payload);
-        });
-
-        messaging.onMessage(function (payload) {
-            console.log('onMessage', payload);
-        })
+        // messaging.onMessage(function (payload) {
+        //     console.log('onMessage', payload);
+        // })
 
             .then(docRef => {
                 if (chatInitialed == false) {
@@ -248,7 +255,7 @@ function send_msgs(event) {
                 }
             })
 
-    } else {
+         } else {
 
         firestore.collection("messages").add({
             currentUserId: currentUserId,
@@ -264,6 +271,35 @@ function send_msgs(event) {
                 })
         })
 
+        //Wayto
+
+
+        //  var key = 'AIzaSyAor9xjGx6Lf29F8fo9Lg-CMg9sncNtf64';
+        //     //  var to = totoken;
+        // //  var to = "fpHvA_Ouzqc:APA91bFyDMc9CcIvohBoafrTwnJGRKa_cFl0Of8mkReuO5-P0HfV4WTLtvxtp2wMf13px58h7vAwgwhd6OAmHs-N_vX03zxbDKfx8Aq7vAvK0QszmiXjlOekk_Zq5B88lovvfeevArYK";
+        //  var notification = {
+        //      'title': "Message From: " + name,
+        //      'message': "message"
+        // };
+        // var url = "https://fcm.googleapis.com/fcm/send";
+        //  fetch(url, {
+        //      'method': 'POST',
+        //      'headers': {
+        //          'Authorization': 'key=' + key,
+        //         'Content-Type': 'application/json'
+        //      },
+        //      'body': JSON.stringify({
+        //          'notification': notification,
+        //          'to': to
+        //      })
+        //  }).then(function (response) {
+        //      console.log(response);
+        //  }).catch(function (error) {
+        //      console.error(error);
+        //  });
+        // messaging.onMessage(function (payload) {
+        //      console.log('onMessage', payload);
+        //  })
 
 
     }
@@ -290,25 +326,27 @@ function initailizeChatListner(chatId) {
             .collection("message")
             .onSnapshot(querySnapshot => {
                 querySnapshot.docChanges().forEach(change => {
+                    // debugger;
                     if (change.doc.data().currentUserId == currentUserId) {
 
                         messages.innerHTML += `
-                                    <div class="message">
-                                     <p class="text-success font-weight-bold p-3 mb-1">${change.doc.data().message}</p>
+                                    <div class="message bg-primary" id = "send">
+                                     <p class="text-white  font-weight-bold p-3 mb-1">${change.doc.data().message}</p>
                                     </div>
                          `
 
                     }
 
                     else {
-
+                        
                         messages.innerHTML += `
                                     <div class="border m-2 message">
-                                     <p class="font-weight-bold text-black p-3 mb-1">${change.doc.data().message}</p>
+                                     <p class="font-weight-bold text-danger p-3 mb-1">${change.doc.data().message}</p>
                                     </div>
                          `
 
                     }
+                    messages.scrollTop= messages.scrollHeight;
 
 
                 })
@@ -321,17 +359,17 @@ function initailizeChatListner(chatId) {
 
 
 
-function signOut() {
+// function signOut() {
 
-    let btn = document.getElementById("logOUt");
-    btn.innerHTML = `
-        <img src="">
-    `
-    firebase.auth().signOut().then(function (res) {
-        console.log("LOG OUT SuccessFull!!!");
-        window.location = "../../index.html"
-    })
-}
+//     let btn = document.getElementById("logOUt");
+//     btn.innerHTML = `
+//         <img src="">
+//     `
+//     firebase.auth().signOut().then(function (res) {
+//         console.log("LOG OUT SuccessFull!!!");
+//         window.location = "../../index.html"
+//     })
+// }
 
 
 
@@ -341,18 +379,10 @@ function signOut() {
 //         console.info("res.data()" , elem.data());
 //     })
 
-// })
-// var name
-// var to
-// firebase.firestore().collection("users").doc(currentUserId).get()
-//     .then((querySnapshot) => {
-//         console.log(querySnapshot.data().token);
-//         to = querySnapshot.data().token;
-//         name = querySnapshot.data().name;
-//         // querySnapshot.forEach((elem) => {
-//         // console.info(elem.data());
-//         // });
-//     });
+// // })
+
+
+
 
 // var key = 'AIzaSyAor9xjGx6Lf29F8fo9Lg-CMg9sncNtf64';
 // // var to = "fpHvA_Ouzqc:APA91bFyDMc9CcIvohBoafrTwnJGRKa_cFl0Of8mkReuO5-P0HfV4WTLtvxtp2wMf13px58h7vAwgwhd6OAmHs-N_vX03zxbDKfx8Aq7vAvK0QszmiXjlOekk_Zq5B88lovvfeevArYK";
@@ -360,8 +390,8 @@ function signOut() {
 //     'title': "Message From: " + name,
 //     'message': "message"
 // };
-
-// fetch("https://fcm.googleapis.com/fcm/send", {
+// var url = "https://fcm.googleapis.com/fcm/send";
+// fetch(url,{ 
 //     'method': 'POST',
 //     'headers': {
 //         'Authorization': 'key=' + key,

@@ -1,7 +1,7 @@
 body{
     background-image: url("../images/back2.jpg");
     background-repeat: no-repeat;
-    background-position: center;
+    background-size: 100%;
 }
 #olx{
     border-radius: 50%;
@@ -30,7 +30,7 @@ body{
 }
 .imagesAdds{
     border-radius: 50%;
-    box-shadow: inset 3px 3px 15px 15px;
+    box-shadow: 3px 3px 2px 2px black;
     width: 25%;
     background-color: beige;
     border: none;
@@ -41,10 +41,11 @@ body{
     color: lightcoral;
     width: 50%;
     margin-left: 5%;
-    border-radius: 5%;
+    /* border-radius: 5%; */
     display: flex;
     font-weight: bolder;
     box-sizing: border-box; 
+    background-color: lightgray;
 }
 #divAdds .details{
     text-align: right;

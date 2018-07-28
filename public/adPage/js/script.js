@@ -34,7 +34,8 @@ var ad_id = localStorage.getItem("ad_id");
 
 var divAdds = document.getElementById("addDiv");
 
-var catagories = ['propertyForBuy', 'propertyForRent', 'cars', 'bikes', 'homeApplinces', 'jobs', 'services', 'mobilePhone'];
+var catagories = ['propertyForBuy', 'propertyForRent', 'cars', 'bikes', 'Home Applinces', 'Jobs', 'Services', 'Mobile Phone'];
+// var catagories = ['propertyForBuy', 'propertyForRent', 'cars', 'bikes', 'homeApplinces', 'jobs', 'services', 'mobilePhone'];
 for(var i = 0 ; i < catagories.length; i++){
 
     firebase.firestore().collection(catagories[i])

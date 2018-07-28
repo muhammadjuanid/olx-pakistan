@@ -36,11 +36,11 @@
             </div>
         </div>
         <div class="container my-3">
-            <input type="text" class="form-control" id="searchbyname" placeholder="Search by Product Name" />
+            <input type="text"  oninput="searchName()" class="form-control" id="searchbyname" placeholder="Search by Product Name" />
             <br/>
-            <center>
+            <!-- <center>
                 <button onclick="searchName()" type="submit" class="btn btn-outline-success" id="ser_Btn">Search</button>
-            </center>
+            </center> -->
             <br/>
             <br/>
             <select class="form-control" oninput="catagorySearch()" id="catagoryForSearch">
@@ -96,7 +96,7 @@
 
                             <div>
                                 <input type="file" multiple="multiple" id="file" class="card btn-outline-primary">
-                                <button type="button" id="button">Send</button>
+                                <!-- <button type="button" id="button">Send</button> -->
                             </div>
                         </div>
                         <div class="modal-footer">

@@ -1,9 +1,8 @@
-/* body{
+ body{
     background-image: url("../images/back2.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
-    color: lightcoral;
-} */
+}
 #olx{
     border-radius: 50%;
 }
@@ -19,9 +18,15 @@
     box-shadow: 3px 3px 3px 3px gray;
 }
 #prev{
-    border-bottom: 6px solid lightblue;
+    /* border-bottom: 6px solid lightblue; */
     width: 50%;
-    align-self: auto;
+    /* align-self: auto; */
+}
+.chatDiv{
+    border: 1px solid #000;
+    background-color: #323356;
+    color: white;
+    border-radius: 20px; 
 }
 #input{
     width: 41%;
@@ -33,4 +38,10 @@
 form{
     text-align: center;
     margin-right: 3.5%;
+}
+#send{
+    width: 150px;
+    border-radius: 10px;
+    text-align: right;
+    margin-left: 70%;
 }

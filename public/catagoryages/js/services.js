@@ -1,5 +1,5 @@
 var divAdds = document.getElementById('divAdds');
-firebase.firestore().collection("services").get()
+firebase.firestore().collection("Services").get()
   .then(function (doc) {
     doc.forEach(element => {
       // var container = document.createElement('div');

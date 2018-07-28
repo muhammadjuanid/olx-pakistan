@@ -159,7 +159,7 @@ function uploadPicture(array) {
   return promises;
 }
 
-var catagories = ['propertyForBuy', 'propertyForRent', 'cars', 'bikes', 'homeApplinces', 'jobs', 'services', 'mobilePhone'];
+var catagories = ['propertyForBuy', 'propertyForRent', 'cars', 'bikes', 'Home Applinces', 'Jobs', 'Services', 'Mobile Phone'];
 var divAdds = document.getElementById('divAdds');
 for (var i = 0; i < catagories.length; i++) {
   firebase.firestore().collection(catagories[i]).get()
@@ -260,7 +260,7 @@ function searchName() {
   let list = document.getElementById("divAdds");
   list.innerHTML = "";
 
-  for (var i = 0; i < promises.length; i++) {
+  for (var i = 0; i < catagories.length; i++) {
 
     // for (var j = 0; j < promises[i].Catagory.length; j++) {
     //     let category = (promises[i].Catagory).toLowerCase();
@@ -275,7 +275,7 @@ function searchName() {
     //     }
     // }
 
-    for (var k = 0; k < promises[i].Title.length; k++) {
+    for (var k = 0; k < catagories[i].title.length; k++) {
       let title = (promises[i].Title).toLowerCase();
       if (toSearch[0] == title[k]) {
         for (var m = 1; m <= title.length; m++) {
@@ -342,7 +342,7 @@ function searchName() {
 //         var price = document.createElement('h4');
 //         price.setAttribute('class', 'price');
 //         price.innerHTML = "Rs : " + element.data().price;
-//         details.appendChild(price);
+//         details.appendChild(price);  
 
 //         var date = document.createElement('h6');
 //         date.setAttribute('class', 'date');

@@ -13,5 +13,10 @@
   },
   "storage": {
     "rules": "storage.ref"
+  },
+  "functions": {
+    "predeploy": [
+      "npm --prefix ./functions run lint"
+    ]
   }
 }
