@@ -25,3 +25,15 @@ body{
     font-weight: bold;
     box-shadow: 3px 3px 2px 2px lightgray; 
 }
+.imagesAdds{
+    width: 100%;
+}
+@media(max-width: 526px){
+    #bar{
+        display :none !important;
+           
+}  
+#images{
+    /* margin-top: 50px; */
+}
+}

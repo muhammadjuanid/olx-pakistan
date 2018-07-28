@@ -1,3 +1,8 @@
+
+  const firestore = firebase.firestore();
+  const settings = {/* your settings... */ timestampsInSnapshots: true};
+  firestore.settings(settings);
+
 var divAdds = document.getElementById('divAdds');
 firebase.firestore().collection("cars").get()
   .then(function (doc) {
@@ -52,10 +57,10 @@ firebase.firestore().collection("cars").get()
       price.innerHTML = "Rs : " + element.data().price;
       details.appendChild(price);
 
-      var date = document.createElement('h6');
-      date.setAttribute('class', 'datez');
-      date.innerHTML = element.data().date;
-      details.appendChild(date);
+      // var date = document.createElement('h6');
+      // date.setAttribute('class', 'datez');
+      // date.innerHTML = element.data().date;
+      // details.appendChild(date);
 
       var breakAds = document.createElement('hr');
       divAdds.appendChild(breakAds);
