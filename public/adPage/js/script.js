@@ -14,20 +14,20 @@ firebase.initializeApp(config);
 // firestore.settings(settings);
 
 const firestore = firebase.firestore();
-const settings = {/* your settings... */ timestampsInSnapshots: true};
+const settings = {/* your settings... */ timestampsInSnapshots: true };
 firestore.settings(settings);
 
 let currentUserId;
-  firebase.auth().onAuthStateChanged(function (user) {
+firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-      currentUserId  = user.uid;
-     // localStorage.setItem("currentUserId" , currentUserId);
-    //console.log(currentUserId + "<====userID");
+        currentUserId = user.uid;
+        // localStorage.setItem("currentUserId" , currentUserId);
+        //console.log(currentUserId + "<====userID");
     }
-  });
+});
 //   console.log("user" , currentUserId);
 
-    //Ad Id
+//Ad Id
 
 var ad_id = localStorage.getItem("ad_id");
 // console.log(ad_id , "adddddd");
@@ -36,85 +36,134 @@ var divAdds = document.getElementById("addDiv");
 
 var catagories = ['propertyForBuy', 'propertyForRent', 'cars', 'bikes', 'Home Applinces', 'Jobs', 'Services', 'Mobile Phone'];
 // var catagories = ['propertyForBuy', 'propertyForRent', 'cars', 'bikes', 'homeApplinces', 'jobs', 'services', 'mobilePhone'];
-for(var i = 0 ; i < catagories.length; i++){
+for (var i = 0; i < catagories.length; i++) {
 
     firebase.firestore().collection(catagories[i])
-       .onSnapshot((docs) => {
+        .onSnapshot((docs) => {
             docs.forEach((doc) => {
                 // console.log('docs ***', doc.id);
             })
-          });
-firebase.firestore().collection(catagories[i]).get()
-.then(function(doc){
-    doc.forEach(element => {
-        // console.log(element.id);
-        if(ad_id == element.id){
-            // alert("yes");
-            localStorage.setItem("AdUserId" , element.data().AdUserId);
-            var container = document.createElement('div');
-      container.setAttribute('class', 'contaioner m-5 card btn');
-      divAdds.appendChild(container);
+        });
+    firebase.firestore().collection(catagories[i]).get()
+        .then(function (doc) {
+            doc.forEach(element => {
+                // console.log(element.id);
+                if (ad_id == element.id) {
+                    // alert("yes");
+                    localStorage.setItem("AdUserId", element.data().AdUserId);
+                    var container = document.createElement('div');
+                    container.setAttribute('class', 'contaioner m-5 card btn');
+                    divAdds.appendChild(container);
 
-      var addsDiv = document.createElement('div');
-      addsDiv.setAttribute('class', 'addsDiv');
-      container.appendChild(addsDiv);
+                    var addsDiv = document.createElement('div');
+                    addsDiv.setAttribute('class', 'addsDiv');
+                    container.appendChild(addsDiv);
 
-      var images = document.createElement('div');
-      images.setAttribute('class', 'images');
-      addsDiv.appendChild(images);
+                    var images = document.createElement('div');
+                    images.setAttribute('class', 'images');
+                    addsDiv.appendChild(images);
 
-      var imagesAdds = document.createElement('img');
-      imagesAdds.setAttribute('class', 'imagesAdds');
-      imagesAdds.setAttribute('src', element.data().imgs[0]);
-      images.appendChild(imagesAdds);
+                    var imagesAdds = document.createElement('img');
+                    imagesAdds.setAttribute('class', 'imagesAdds');
+                    imagesAdds.setAttribute('src', element.data().imgs[0]);
+                    images.appendChild(imagesAdds);
 
-      var details = document.createElement('div');
-      details.setAttribute('class', 'details');
-      addsDiv.appendChild(details);
+                    var details = document.createElement('div');
+                    details.setAttribute('class', 'details');
+                    addsDiv.appendChild(details);
 
-      var title = document.createElement('h5');
-      title.setAttribute('class', 'title');
-      title.innerHTML = element.data().title;
-      details.appendChild(title);
+                    var title = document.createElement('h5');
+                    title.setAttribute('class', 'title');
+                    title.innerHTML = element.data().title;
+                    details.appendChild(title);
 
-      var catagory1 = document.createElement('h6');
-      catagory1.setAttribute('class', 'catagory1');
-      catagory1.innerHTML = element.data().catagory;
-      details.appendChild(catagory1);
+                    var catagory1 = document.createElement('h6');
+                    catagory1.setAttribute('class', 'catagory1');
+                    catagory1.innerHTML = element.data().catagory;
+                    details.appendChild(catagory1);
 
-      var phone = document.createElement("h5");
-      phone.setAttribute('class' , 'phone');
-      phone.innerHTML = "CELL # " + element.data().phone_number;
-      details.appendChild(phone);
+                    var phone = document.createElement("h5");
+                    phone.setAttribute('class', 'phone');
+                    phone.innerHTML = "CELL # " + element.data().phone_number;
+                    details.appendChild(phone);
 
-      var price = document.createElement('h4');
-      price.setAttribute('class', 'price');
-      price.innerHTML = "Rs : " + element.data().price;
-      details.appendChild(price);
+                    var price = document.createElement('h4');
+                    price.setAttribute('class', 'price');
+                    price.innerHTML = "Rs : " + element.data().price;
+                    details.appendChild(price);
 
-      var date = document.createElement('h6');
-      date.setAttribute('class', 'date');
-      date.innerHTML = element.data().date;
-      details.appendChild(date);
+                    var date = document.createElement('h6');
+                    date.setAttribute('class', 'date');
+                    date.innerHTML = element.data().date;
+                    details.appendChild(date);
 
-      var button = document.createElement("button");
-      button.setAttribute("class" , "btn btn-outline-success");
-      button.innerHTML = "Chat To Adder"
-      button.href="Javascript:void(0)";
-      button.addEventListener('click', goChat);
-      addsDiv.appendChild(button);
+                    var button = document.createElement("button");
+                    button.setAttribute("class", "btn btn-outline-success");
+                    button.innerHTML = "Chat To Adder"
+                    button.href = "Javascript:void(0)";
+                    button.addEventListener('click', goChat);
+                    addsDiv.appendChild(button);
 
-      var breakAds = document.createElement('br');
-      divAdds.appendChild(breakAds);
-        }
-        // else{alert("sorry");}
-    });
+                    var button = document.createElement("button");
+                    button.setAttribute("class", "btn btn-outline-danger m-1");
+                    button.innerHTML = "Favorite"
+                    button.href = "Javascript:void(0)";
+                    button.addEventListener('click', adFav);
+                    addsDiv.appendChild(button);
+
+                    var breakAds = document.createElement('br');
+                    divAdds.appendChild(breakAds);
+                }
+                // else{alert("sorry");}
+            });
+        })
+}
+
+
+function goChat() {
+    // alert('clicked');
+    localStorage.setItem('ad_id', this.getAttribute("ancerId"));
+    window.location.href = "../messages/messages.html";
+}
+
+
+
+function adFav(){
+
+    if (localStorage.getItem("fav") == null) {
+        localStorage.setItem("fav", "[]");
+      }
+
+      var fav = JSON.parse(localStorage.getItem("fav"));
+
+for (var j = 0; j < catagories.length; j++) {
+    firebase.firestore().collection(catagories[j]).get()
+        .then(function (doc) {
+            doc.forEach(element => {
+                // console.log(element.id)
+                var element1 = element.data();
+                // console.log(element.id);
+                if (ad_id == element.id) {
+                    fav.push(element1)
+
+                    localStorage.setItem("fav", JSON.stringify(fav));
+
+
+                    var req = new Request(element.data().imgs, { mode: "no-cors" });
+                    fetch(req).then(res => {
+                      caches.open("Olx-Pak").then(cache => {
+                        console.log("Stored");
+              
+                        return cache.put(req, res).then(() => {
+        
+                        })
+                      })
+                    })
+                        
+                }
+            })  
 })
 }
 
 
-function goChat(){
-    // alert('clicked');
-    localStorage.setItem('ad_id', this.getAttribute("ancerId"));
-    window.location.href = "../messages/messages.html";
-  }
+}

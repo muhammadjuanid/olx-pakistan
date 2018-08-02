@@ -1,11 +1,27 @@
 body{
-    background-image: url("../images/back2.jpg");
+    background-image: url("../../images/back2.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%; 
 }
 #olx{
     border-radius: 50%;
 }
 #bar{
     margin-left: 60%;
+}
+
+
+@media(max-width: 768px){
+#btn{
+    margin-right: 37%; 
+    margin-top: 2%;
+}
+
+#bar{
+    display: none;
+    margin-right: 80%;
+}
+#home{
+    margin-top: 2%;
+}
 }

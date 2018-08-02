@@ -25,3 +25,45 @@ body{
     font-weight: bold;
     box-shadow: 3px 3px 2px 2px lightgray; 
 }
+.imagesAdds{
+    width: 100%;
+}
+.addsDiv{
+    background-color: #DCDCDC;
+}
+@media(max-width: 526px){
+    #bar{
+        display :none !important;
+    }
+        #btn{
+            margin-right: 37%; 
+            margin-top: 2%;
+        }
+        
+        #bar{
+            display: none;
+            margin-right: 80%;
+        }
+        #home{
+            margin-top: 2%;
+        }
+        
+} 
+@media(max-width: 768px){
+    #bar{
+        display :none !important;
+    }
+        #btn{
+            margin-right: 37%; 
+            margin-top: 2%;
+        }
+        
+        #bar{
+            display: none;
+            margin-right: 80%;
+        }
+        #home{
+            margin-top: 2%;
+        }
+        
+} 

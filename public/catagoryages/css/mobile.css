@@ -2,6 +2,7 @@ body{
     background-image: url("../images/mobiles.png");
     background-repeat: no-repeat;
     background-position: right;
+    background-size: 75%; 
 }
 #olx{
     border-radius: 50%;
@@ -25,3 +26,46 @@ body{
     font-weight: bold;
     box-shadow: 3px 3px 2px 2px lightgray; 
 }
+.details{
+    height: 150px;
+    text-align: right;
+}
+.addsDiv{
+    background-color: #DCDCDC;
+}
+@media(max-width: 526px){
+    #bar{
+        display :none !important;
+    }
+        #btn{
+            margin-right: 37%; 
+            margin-top: 2%;
+        }
+        
+        #bar{
+            display: none;
+            margin-right: 80%;
+        }
+        #home{
+            margin-top: 2%;
+        }
+        
+} 
+@media(max-width: 768px){
+    #bar{
+        display :none !important;
+    }
+        #btn{
+            margin-right: 37%; 
+            margin-top: 2%;
+        }
+        
+        #bar{
+            display: none;
+            margin-right: 80%;
+        }
+        #home{
+            margin-top: 2%;
+        }
+        
+} 

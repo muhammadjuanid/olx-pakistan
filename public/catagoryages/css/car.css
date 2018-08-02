@@ -28,12 +28,42 @@ body{
 .imagesAdds{
     width: 100%;
 }
+.addsDiv{
+    background-color: #DCDCDC;
+}
 @media(max-width: 526px){
     #bar{
         display :none !important;
-           
-}  
-#images{
-    /* margin-top: 50px; */
-}
-}
+    }
+        #btn{
+            margin-right: 37%; 
+            margin-top: 2%;
+        }
+        
+        #bar{
+            display: none;
+            margin-right: 80%;
+        }
+        #home{
+            margin-top: 2%;
+        }
+        
+} 
+@media(max-width: 768px){
+    #bar{
+        display :none !important;
+    }
+        #btn{
+            margin-right: 37%; 
+            margin-top: 2%;
+        }
+        
+        #bar{
+            display: none;
+            margin-right: 80%;
+        }
+        #home{
+            margin-top: 2%;
+        }
+        
+} 

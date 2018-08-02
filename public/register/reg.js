@@ -10,15 +10,15 @@ function onSubmit(event){
     firebase.auth().createUserWithEmailAndPassword(eMail, password)
     .then(function(res){
         localStorage.setItem("currentUserId" , res.user.uid)
-        console.log("res ===> " , res.user.uid);
+        // console.log("res ===> " , res.user.uid);
 
         db.collection("users").doc(res.user.uid).set({name , eMail})
         .then(() => {
-            console.log("db added");
+            // console.log("db added");
             window.location.href="../Dashbord/dashbord.html"
         })
         .catch((e) => {
-            console.log("error in added");
+            // console.log("error in added");
         })
     })
     // .catch(function(error) {

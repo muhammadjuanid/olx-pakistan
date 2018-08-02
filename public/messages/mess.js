@@ -9,9 +9,9 @@ const messaging = firebase.messaging();
 let currentUser = undefined;
 //let chatsDiv = document.getElementById("allChats");
 
-console.log("firestore", firestore);
-console.log("auth", auth);
-console.log("messaging", messaging);
+// console.log("firestore", firestore);
+// console.log("auth", auth);
+// console.log("messaging", messaging);
 
 var recID = localStorage.getItem("AdUserId");
 var currentUserId = localStorage.getItem("currentUserId");
@@ -49,7 +49,7 @@ firestore.collection("messages").where("recID", "==", currentUserId)
     var to;
     firebase.firestore().collection("users").doc(currentUserId).get()
         .then((querySnapshot) => {
-            console.log(querySnapshot.data().token);
+            // console.log(querySnapshot.data().token);
             to = querySnapshot.data().token;
            name = querySnapshot.data().name;
            // querySnapshot.forEach((elem) => {
@@ -64,7 +64,7 @@ function startChat(event) {
 
     if (event.target.nodeName == "SPAN" || event.target.nodeName == "H5") {
         let target = (event.target.parentNode.parentNode).id
-        console.log(target);
+        // console.log(target);
 
         chatBox.id = target;
         firestore.collection("messages").doc(target)
@@ -128,14 +128,14 @@ if (recID && currentUserId) {
     let messageDiv = document.getElementById("messages");
 
 
-    console.log("working")
+    // console.log("working")
     firestore.collection("messages").where("currentUserId", "==", currentUserId)
         .where("recID", "==", recID)
 
         .get().then(function (snapshot) {
             snapshot.forEach(function (chatRoom) {
                 roomFound = true;
-                console.log("chat room Found>>>", chatRoom)
+                // console.log("chat room Found>>>", chatRoom)
                 currentChat = chatRoom.id;
                 chatBox.id = chatRoom.id;
 
@@ -167,7 +167,7 @@ function createRoom() {
         }).then(chatRoom => {
             chatBox.id = chatRoom.id;
             currentChat = chatRoom.id;
-            console.log("Chat room Created With This ID >", chatRoom.id);
+            // console.log("Chat room Created With This ID >", chatRoom.id);
             initailizeChatListner(chatRoom.id)
             resolve(chatRoom.id);
 

@@ -36,14 +36,14 @@
             </div>
         </div>
         <div class="container my-3">
-            <input type="text"  oninput="searchName()" class="form-control" id="searchbyname" placeholder="Search by Product Name" />
+            <input type="text"  oninput="searchName()" class="form-control" id="searchbyname" placeholder="Search by Product Name" list="list" />
             <br/>
             <!-- <center>
                 <button onclick="searchName()" type="submit" class="btn btn-outline-success" id="ser_Btn">Search</button>
             </center> -->
             <br/>
             <br/>
-            <select class="form-control" oninput="catagorySearch()" id="catagoryForSearch">
+            <!-- <select class="form-control" oninput="catagorySearch()" id="catagoryForSearch">
                 <option value="selected">Select Catagory</option>
                 <option value="propertyForBuy">Property For Buy</option>
                 <option value="propertyForRent">Property For Rent</option>
@@ -53,9 +53,9 @@
                 <option value="Jobs">Jobs</option>
                 <option value="Services">Services</option>
                 <option value="Mobile Phone">Mobile Phone</option>
-            </select>
+            </select> -->
         </div>
-
+        <datalist id="list"></datalist>
         <div id="divAdds"  class="card"></div>
 
         <div class="modal fade" id="addProduct">

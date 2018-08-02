@@ -7,7 +7,7 @@ function logIn(event){
 
     firebase.auth().signInWithEmailAndPassword(eMail, password)
     .then((res) => {
-        console.log(res)
+        // console.log(res)
         localStorage.setItem("currentUserId" , res.user.uid)
         window.location.href="../Dashbord/dashbord.html"
     })
@@ -15,7 +15,7 @@ function logIn(event){
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
-        console.log(errorMessage);
+        // console.log(errorMessage);
         // ...
       });
 }

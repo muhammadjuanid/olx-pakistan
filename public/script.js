@@ -44,14 +44,14 @@ firestore.settings(settings);
 
 function icons_search() {
     var iconData = document.getElementById("PropertyForRent").value;
-    console.log(iconData);
+    // console.log(iconData);
     var catagories = ['propertyForBuy', 'propertyForRent', 'cars', 'bikes', 'homeApplinces', 'jobs', 'services', 'mobilePhone'];
     var divAdds = document.getElementById('mainDiv');
     for (var i = 0; i < catagories.length; i++) {
         firestore.collection("catagories[i]").where("catagory", "==", iconData).get()
             .then(function (doc) {
                 doc.forEach(element => {
-                    console.log(element.data());
+                    // console.log(element.data());
                     var container = document.createElement('div');
                     container.setAttribute('class', 'container');
                     divAdds.appendChild(container);
@@ -144,22 +144,22 @@ function goAddServices() {
 
 if ('serviceWorker' in navigator) {
 
-    console.log('Service Worker is supported');
+    // console.log('Service Worker is supported');
   
     // if service worker supported then register my service worker
     navigator.serviceWorker.register('firebase-messaging-sw.js').then(function (reg) {
-      console.log('Successfully Register :^)', reg);
+    //   console.log('Successfully Register :^)', reg);
   
       reg.pushManager.subscribe({
         userVisibleOnly: true
       }).then(function (subscription) {
-        console.log('subscription:', subscription.toJSON());
+        // console.log('subscription:', subscription.toJSON());
         // GCM were used this endpoint
         console.log('endpoint:', subscription.endpoint);
       });
   
     }).catch(function (error) {
-      console.log('SW Registration Failed: :^(', error);
+    //   console.log('SW Registration Failed: :^(', error);
     });
   
   }

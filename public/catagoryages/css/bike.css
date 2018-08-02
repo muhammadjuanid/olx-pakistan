@@ -9,8 +9,9 @@
     border-radius: 10%; 
 }
 .container .addsDiv{
-    box-sizing: content-box;
+    /* box-sizing: content-box; */
     text-align: center;
+    display: block;
 }
 .addsDiv{
     background-color: transparent;
@@ -21,4 +22,22 @@
     font-weight: bold;
     box-shadow: 3px 3px 2px 2px lightgray; 
     float: left;
+    
 }
+#images1{
+    width: 100%;
+}
+@media(max-width: 534px){
+    #btn{
+        margin-right: 37%; 
+        margin-top: 2%;
+    }
+    
+    #bar{
+        display: none;
+        margin-right: 80%;
+    }
+    #home{
+        margin-top: 2%;
+    }
+    }
